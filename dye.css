@@ -63,7 +63,7 @@ table caption {
 }
 
 input#fabric-weight {
-  width: 4rem;
+  width: 3rem;
   background: transparent;
   border: 2px solid indigo;
   color: indigo;
