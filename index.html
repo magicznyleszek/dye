@@ -75,8 +75,8 @@ layout: none
 
       <thead>
         <tr>
-          <th>step</th>
-          <th>ingredient</th>
+          <th>&numero;</th>
+          <th>what?</th>
           <th>amount</th>
           <th>ratio</th>
           <th>note</th>
@@ -91,15 +91,15 @@ layout: none
             <input id="fabric-weight" type="number" value="" step="1" min="1">
             g
           </td>
-          <td><code>1</code></td>
+          <td>1</td>
           <td></td>
         </tr>
 
         <tr>
           <td>2.</td>
           <td>H<sub>2</sub>O</td>
-          <td class="td-amount"><code id="water-ml">0</code> ml</td>
-          <td><code>12</code></td>
+          <td class="td-amount"><span id="water-ml">0</span> ml</td>
+          <td>12</td>
           <td>60-70&deg;C</td>
         </tr>
 
@@ -107,11 +107,11 @@ layout: none
           <td>3.</td>
           <td>dye</td>
           <td class="td-amount">
-            <code id="dye-ml">0</code> ml
+            <span id="dye-ml">0</span> ml
             <br />
-            <code id="dye-ts">0</code> teaspoon
+            <span id="dye-ts">0</span> teaspoon
           </td>
-          <td><code>0.25</code></td>
+          <td>¼</td>
           <td>double for<br />bolder color</td>
         </tr>
 
@@ -119,18 +119,18 @@ layout: none
           <td>4.</td>
           <td>salt</td>
           <td class="td-amount">
-            <code id="salt-ml">0</code> ml
+            <span id="salt-ml">0</span> ml
             <br />
-            <code id="salt-cup">0</code> cup
+            <span id="salt-cup">0</span> cup
           </td>
-          <td>0.75</td>
+          <td>¾</td>
           <td></td>
         </tr>
 
         <tr>
           <td>5.</td>
           <td>detergent</td>
-          <td class="td-amount"><code id="detergent-ts">0</code> ts</td>
+          <td class="td-amount"><span id="detergent-ts">0</span> ts</td>
           <td></td>
           <td></td>
         </tr>
@@ -152,7 +152,7 @@ layout: none
     <p>If you try using those suggested numbers in real life though, you would quickly see that they don't make a lot of sense. That's why I'm using different ratios.</p>
 
     <p>
-      <small>Note:</small>
+      <small>Notes:</small>
       <br />
       <small>1 teaspoon is 5 ml.</small>
       <br />

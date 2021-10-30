@@ -20,7 +20,7 @@ section.calculator {
 
 section.description {
   max-width: 30rem;
-  margin: 1rem auto;
+  margin: 2rem auto;
 }
 
 footer.ending {
@@ -63,15 +63,18 @@ table caption {
 }
 
 input#fabric-weight {
-  width: 3rem;
+  width: 4rem;
   background: transparent;
   border: 2px solid indigo;
   color: indigo;
   font-weight: bold;
-  font-family: monospace;
 }
 
 /* to disable zoom on mobile when focusing */
 input, textarea {
   font-size: 1rem;
+}
+
+p, ul, ol {
+  margin: 1rem auto;
 }
