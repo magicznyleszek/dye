@@ -1,0 +1,17 @@
+## TEAM
+
+Everything: Leszek Pietrzak
+Site: magicznyleszek.xyz
+Email: leszek@magicznyleszek.xyz
+Location: Warsaw, Poland
+
+
+## THANKS
+
+Tom Preston-Werner, Nick Quaranto: jekyllrb.com
+
+
+## SITE
+
+Language: English
+Software: Atom

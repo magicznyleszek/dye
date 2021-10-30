@@ -1,4 +1,13 @@
+# Jekyll site is built by gh-pages
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+
+# NPM
+node_modules
+npm-debug.log
+
+# OS generated
+.DS_Store
+Thumbs.db

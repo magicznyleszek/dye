@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% comment %}
+  stuff that needs to be first
+  {% endcomment %}
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+  {% comment %}
+  site information
+  {% endcomment %}
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
+  <meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}{{ site.description }}{% endif %}"/>
+  <base href="{{ site.baseurl }}"/>
+  <link rel="home" href="{{ site.baseurl }}"/>
+
+  {% comment %}
+  stuff for robots
+  {% endcomment %}
+  <meta name="robots" content="index,follow,noodp"/>
+  <meta name="googlebot" content="index,follow"/>
+
+  {% comment %}
+  open graph tags
+  {% endcomment %}
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content="{{ site.name }}"/>
+  <meta property="og:title" content="{% if page.title %}{{ page.title | strip_html | strip_newlines }}{% else %}{{ site.name }}{% endif %}"/>
+  <meta property="og:description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}{{ site.description }}{% endif %}"/>
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}"/>
+  <meta name="twitter:description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}{{ site.description }}{% endif %}"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:creator" content="{{site.author}}"/>
+  <meta name="twitter:title" content="{{page.title}}"/>
+
+  {% if page.thumbnail %}
+  <meta name="twitter:image" content="{{ page.thumbnail | prepend: site.baseurl }}"/>
+  <meta property="og:image" content="{{ page.thumbnail | prepend: site.baseurl }}"/>
+  {% else %}
+  <meta name="twitter:image" content="{{ site.logo | prepend: site.baseurl }}"/>
+  <meta property="og:image" content="{{ site.logo | prepend: site.baseurl }}"/>
+  {% endif %}
+  {% else %}
+  {% comment %}
+  OG tags for non-blog pages
+  {% endcomment %}
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="{{site.name}}"/>
+  <meta name="twitter:image" content="{{ site.logo | prepend: site.baseurl }}"/>
+  <meta property="og:image" content="{{ site.logo | prepend: site.baseurl }}"/>
+  {% endif %}
+
+  {% comment %}
+  style and icons
+  {% endcomment %}
+  <link href="{{ site.baseurl }}/normalize.css" rel="stylesheet" media="all"/>
+  <link href="{{ site.baseurl }}/dye.css?{{ versionCache }}" rel="stylesheet" media="all"/>
+  <link rel="icon" href="{{ site.baseurl }}/rdc-logo.png?{{ versionCache }}"/>
+</head>
+
+<body>
+  <header class="logo-wrapper"><img src="{{site.baseUrl}}/rdc-logo.png" alt="RDC"></header>
+
+  <section class="calculator">
+    <table>
+      <caption>Rit Dye™ Calculator</caption>
+
+      <thead>
+        <tr>
+          <th>step</th>
+          <th>ingredient</th>
+          <th>amount</th>
+          <th>ratio</th>
+          <th>note</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1.</td>
+          <td>fabric</td>
+          <td class="td-amount">
+            <input id="fabric-weight" type="number" value="" step="1" min="1">
+            g
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>2.</td>
+          <td>H<sub>2</sub>O</td>
+          <td class="td-amount"><code id="water-ml">0</code> ml</td>
+          <td><code>12</code></td>
+          <td>60-70&deg;C</td>
+        </tr>
+
+        <tr>
+          <td>3.</td>
+          <td>dye</td>
+          <td class="td-amount">
+            <code id="dye-ml">0</code> ml
+            <br />
+            <code id="dye-ts">0</code> teaspoon
+          </td>
+          <td><code>0.25</code></td>
+          <td>double for<br />bolder color</td>
+        </tr>
+
+        <tr>
+          <td>4.</td>
+          <td>salt</td>
+          <td class="td-amount">
+            <code id="salt-ml">0</code> ml
+            <br />
+            <code id="salt-cup">0</code> cup
+          </td>
+          <td>0.75</td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>5.</td>
+          <td>detergent</td>
+          <td class="td-amount"><code id="detergent-ts">0</code> ts</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="description">
+    <p>This tool is made for the liquid dye only. Calculations are partially based on the amounts of stuff suggested by <a href="https://ritdye.com/">the producer</a> itself:</p>
+
+    <ul>
+      <li>3 gallons of water per 1 pound of fabric,</li>
+      <li>half a bottle of dye per 1 pound of fabric,</li>
+      <li>and 1 cup of salt per 1 gallon of water.</li>
+    </ul>
+
+    <p>Normal people use metric system, so 11000 ml of water, 118 ml of dye and 750 ml of salt for 454 g of fabric.</p>
+
+    <p>If you try using those suggested numbers in real life though, you would quickly see that they don't make a lot of sense. That's why I'm using different ratios.</p>
+
+    <p>
+      <small>Note:</small>
+      <br />
+      <small>1 teaspoon is 5 ml.</small>
+      <br />
+      <small>1 cup is 250 ml.</small>
+      <br />
+      <small>1 Rit Dye™ bottle is 236 ml.</small>
+    </p>
+  </section>
+
+  <footer class="ending">
+    <a href="https://magicznyleszek.xyz">author</a>
+  </footer>
+
+  <script src="{{site.baseUrl}}/dye.js"></script>
+</body>
+
+</html>
