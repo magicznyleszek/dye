@@ -1,3 +1,7 @@
+---
+layout: none
+---
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +48,7 @@
   <meta name="twitter:image" content="{{ site.logo | prepend: site.baseurl }}"/>
   <meta property="og:image" content="{{ site.logo | prepend: site.baseurl }}"/>
   {% endif %}
-  {% else %}
+
   {% comment %}
   OG tags for non-blog pages
   {% endcomment %}
@@ -53,7 +57,6 @@
   <meta name="twitter:title" content="{{site.name}}"/>
   <meta name="twitter:image" content="{{ site.logo | prepend: site.baseurl }}"/>
   <meta property="og:image" content="{{ site.logo | prepend: site.baseurl }}"/>
-  {% endif %}
 
   {% comment %}
   style and icons

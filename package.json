@@ -1,0 +1,28 @@
+{
+  "name": "dye",
+  "private": true,
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/magicznyleszek/dye.git"
+  },
+  "author": "Leszek Pietrzak",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/magicznyleszek/dye/issues",
+    "email": "leszek@magicznyleszek.xyz"
+  },
+  "homepage": "https://rdc.magicznyleszek.xyz",
+  "scripts": {
+    "serve": "npm run jekyll:serve",
+    "jekyll:build": "jekyll build",
+    "jekyll:serve": "jekyll serve --watch --baseurl ''"
+  },
+  "watch": {},
+  "devDependencies": {
+    "stylelint": "^7.13.0",
+    "stylelint-order": "^0.5.0",
+    "stylelint-selector-pattern": "0.0.2"
+  },
+  "dependencies": {}
+}
