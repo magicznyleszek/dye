@@ -22,7 +22,7 @@
   const WATER_RATIO = 12;
   // Rit suggested ratio is 24.2.
 
-  // how much ml dye is needed for 1 gram of fabric
+  // how much ml (or g of powder) dye is needed for 1 gram of fabric
   const DYE_RATIO = 0.25;
   // Rit suggested ratio is 0.26.
 
